@@ -1,4 +1,9 @@
 from os import environ as env
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 class Telegram:
     API_ID = int(env.get("TELEGRAM_API_ID", 1234))
@@ -11,7 +16,7 @@ class Telegram:
     SECRET_CODE_LENGTH = int(env.get("SECRET_CODE_LENGTH", 12))
 
 class Server:
-    BASE_URL = env.get("BASE_URL", "http://127.0.0.1:8080")
+    BASE_URL = env.get("SERVER_URL", "https://8080-cs-498511272646-default.cs-asia-southeast1-ajrg.cloudshell.dev")
     BIND_ADDRESS = env.get("BIND_ADDRESS", "0.0.0.0")
     PORT = int(env.get("PORT", 8080))
 
